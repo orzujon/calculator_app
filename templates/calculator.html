@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    
+    <style>
+    /* Adjust the font size of the page for smaller screens */
+    @media only screen and (max-width: 600px) {
+        html {
+            font-size: 16px;
+        }
+    }
+
+    /* Adjust the layout of the form for smaller screens */
+    @media only screen and (max-width: 600px) {
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label, input, select, button {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+    }
+    </style>
+</head>
+<body>
+    <h1>Calculator</h1>
+    <form method="post">
+        <label for="num1">Number 1:</label>
+        <input type="number" name="num1" required>
+        <br>
+        <label for="num2">Number 2:</label>
+        <input type="number" name="num2" required>
+        <br>
+        <label for="operation">Operation:</label>
+        <select name="operation" required>
+            <option value="+">Addition</option>
+            <option value="-">Subtraction</option>
+            <option value="*">Multiplication</option>
+            <option value="/">Division</option>
+        </select>
+        <br>
+        <button type="submit">Calculate</button>
+    </form>
+    {% if result %}
+        <p>The result is: {{ result }}</p>
+    {% endif %}
+</body>
+</html>
